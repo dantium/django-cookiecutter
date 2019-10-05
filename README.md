@@ -3,10 +3,11 @@ Base Django Cookiecutter project
 
 Includes
 
-- Docker
+- Docker support, production and dev configs
 - Tailwind CSS
 - Webpack
 - Django Rest Framework
+- Wagtail CMS
 
 
 TODO

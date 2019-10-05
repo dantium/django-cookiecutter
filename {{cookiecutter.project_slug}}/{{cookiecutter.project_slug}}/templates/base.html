@@ -1,0 +1,14 @@
+{% raw %}{% load static %}{% endraw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ cookiecutter.project_name }}</title>
+    <meta name="author" content="{{ cookiecutter.author_name }}">
+</head>
+<body class="{% block body_class %}{% endblock body_class %}">
+{% raw %}{% include "includes/header.html" %}
+{% block body %}{% endblock body %}
+{% include "includes/footer.html" %}{% endraw %}
+</body>
+</html>
