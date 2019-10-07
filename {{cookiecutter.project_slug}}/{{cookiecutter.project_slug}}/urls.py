@@ -20,6 +20,7 @@ from django.urls import path, re_path, include
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 {%- if cookiecutter.use_wagtail == 'y' %}
 from wagtail.admin import urls as wagtailadmin_urls
@@ -34,6 +35,8 @@ urlpatterns = [
         TemplateView.as_view(template_name="index.html"),
         name="index"
     ),
+    path('api-auth/', include('rest_framework.urls')),
+
     {%- if cookiecutter.use_wagtail == 'y' %}
     # wagtail urls
     re_path(r'^cms/', include(wagtailadmin_urls)),
@@ -63,9 +66,7 @@ if settings.DEBUG:
         path("500/", default_views.server_error),
     ]
     urlpatterns += staticfiles_urlpatterns()
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-    )
+
     if "debug_toolbar" in settings.INSTALLED_APPS:
         import debug_toolbar
 

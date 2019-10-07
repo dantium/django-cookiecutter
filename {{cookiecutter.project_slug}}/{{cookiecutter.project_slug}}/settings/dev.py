@@ -1,3 +1,5 @@
+import socket
+
 from .base import *
 
 DEBUG = True
@@ -28,7 +30,9 @@ DEBUG_TOOLBAR_PANELS = [
 
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
 
-INTERNAL_IPS = ["127.0.0.1", "10.0.2.2"]
+# Set INTERNAL_IPS when using Docker
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS += [ip[:-1] + "1" for ip in ips]
 
 EMAIL_BACKEND = env(
     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"

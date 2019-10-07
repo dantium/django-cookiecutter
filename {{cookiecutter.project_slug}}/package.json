@@ -6,7 +6,6 @@
 
   },
   "devDependencies": {
-
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@glidejs/glide": "^3.3.0",
@@ -33,10 +32,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/dantium/{{ cookiecutter.project_slug }}.git"
+    "url": "git+ssh://git@github.com/{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}.git"
   },
   "keywords": [],
   "author": "{{ cookiecutter.author_name }}",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/dantium/{{ cookiecutter.project_slug }}#readme"
+  "homepage": "https://{{ cookiecutter.domain_name }}"
 }
