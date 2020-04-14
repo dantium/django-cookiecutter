@@ -7,6 +7,6 @@ psycopg2==2.8.3
 gunicorn==19.9.0
 django-compressor==2.3
 {%- if cookiecutter.use_wagtail == 'y' %}
-wagtail==2.6.2
+wagtail==2.7.2
 {%- endif %}
 
